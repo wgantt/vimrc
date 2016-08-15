@@ -106,16 +106,16 @@ inoremap <leader>wh while ()<esc>i
 " ABBREVIATIONS {{{
 
 " Typos
-iab adn and
-iab tehn then
-iab waht what
+iabbrev adn and
+iabbrev tehn then
+iabbrev  waht what
 
 " Shortcuts
-iab @@ wgantt@bowdoin.edu
-iab Wg William Gantt
-iab wg Will Gantt
-iab cpt Copyright (c) 2016 William Gantt, all rights reserved
-iab sig WAHG
+iabbrev @@ wgantt@bowdoin.edu
+iabbrev Wg William Gantt
+iabbrev wg Will Gantt
+iabbrev cpt Copyright (c) 2016 William Gantt, all rights reserved
+iabbrev sig WAHG
 
 " }}}
 
