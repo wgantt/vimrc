@@ -1,7 +1,33 @@
-" This is a test comment
+" PLUGINS -------------------------------------------------- {{{
+
+" activate plug-in manager
+call plug#begin('~/.vim/plugged')
+
+" NERD_commenter -- easier commenting
+Plug '~/.vim/plugin/NERD_commenter.vim'
+
+" Solarized color scheme
+Plug '~/.vim/plugin/vim-colors-solarized'
+
+call plug#end()
+" }}}
+
+" DISPLAY ----------------------------------------------- {{{
+
+" solarized color scheme
+syntax enable
+set background=dark
+colorscheme solarized
+
+" }}}
+
+" MISCELLANEOUS ----------------------------------------- {{{
 
 " turn on syntax coloring
 syntax on
+
+" allow plugins
+filetype plugin on
 
 " number the lines
 set number
@@ -21,6 +47,8 @@ set laststatus=2
 " always fold code when opening a file
 set foldlevelstart=0
 
+" }}}
+
 " LEADERS {{{
 let mapleader = ";"
 let maplocalleader = ","
@@ -33,7 +61,6 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
-
 
 " MAPPINGS {{{
 
@@ -86,6 +113,10 @@ nnoremap <leader>f <c-f>
 " page up
 nnoremap <leader>b <c-b>
 
+" put a semicolon at the end of the current 
+" line and return to the current position
+nnoremap <leader>; mqA;<esc>`q;
+
 " make escaping from insert mode easier
 inoremap jk <esc>
 
@@ -100,6 +131,9 @@ inoremap <leader>fr for (int i=0; i<; i++)<esc>5hi
 
 " while loops
 inoremap <leader>wh while ()<esc>i
+
+" open previous buffer in a vertical split
+nnoremap <leader>vb :execute "rightbelow vsplit " bufname("#")<CR>
 
 " }}}
 
@@ -162,9 +196,3 @@ set statusline+=%-4L]		" Total lines
 
 " }}}
 
-" PLUG-INS {{{
-
-" CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" }}}
