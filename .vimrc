@@ -1,13 +1,18 @@
 " PLUGINS -------------------------------------------------- {{{
 
+" a set of plugins that comes with the standard Vim distribution
+
 " activate plug-in manager
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " NERD_commenter -- easier commenting
 Plug '~/.vim/plugin/NERD_commenter.vim'
 
 " Solarized color scheme
 Plug '~/.vim/plugin/vim-colors-solarized'
+
+" Vim's built-in man page viewer (for easier reading of man entries)
+Plug '~/.vim/plugin/man.vim'
 
 call plug#end()
 " }}}
@@ -26,8 +31,11 @@ colorscheme solarized
 " turn on syntax coloring
 syntax on
 
-" allow plugins
-filetype plugin on
+" match search patterns as they are typed
+set incsearch
+
+" highlight search matches
+set hlsearch
 
 " number the lines
 set number
@@ -113,7 +121,7 @@ nnoremap <leader>f <c-f>
 " page up
 nnoremap <leader>b <c-b>
 
-" put a semicolon at the end of the current 
+" put a semicolon at the end of the current
 " line and return to the current position
 nnoremap <leader>; mqA;<esc>`q;
 
@@ -135,6 +143,18 @@ inoremap <leader>wh while ()<esc>i
 " open previous buffer in a vertical split
 nnoremap <leader>vb :execute "rightbelow vsplit " bufname("#")<CR>
 
+" mark trailing whitespace characters
+nnoremap <leader>ws :match Search /\v\s\_$/<CR>
+
+" clear a match search
+nnoremap <leader>wc :match none<CR>
+ 
+" add a '\v' (very magic) whenever beginning a search
+nnoremap / /\v
+nnoremap ? ?\v
+
+" clear highlighting from last search
+nnoremap <leader>nh :nohlsearch<CR>
 " }}}
 
 " ABBREVIATIONS {{{
@@ -170,14 +190,14 @@ augroup END
 " Javascript
 augroup filetype_js
 	autocmd!
-	autocmd FileType javascript nnoremap <buffer> 
+	autocmd FileType javascript nnoremap <buffer>
 		\ <localleader>c I//<esc>
 augroup END
 
-" C 
+" C
 augroup filetype_c
 	autocmd!
-	autocmd FileType c inoremap <buffer> <localleader>r return 
+	autocmd FileType c inoremap <buffer> <localleader>r return
 	autocmd FileType c inoremap <buffer> return NOPE!
 	autocmd FileType c inoremap <buffer> <Tab> <Space><Space>
 augroup END
