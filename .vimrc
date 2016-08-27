@@ -6,13 +6,13 @@
 call plug#begin()
 
 " NERD_commenter -- easier commenting
-Plug '~/.vim/plugin/NERD_commenter.vim'
+Plug '~/.vim/plugin/NERD_commenter'
 
 " Solarized color scheme
 Plug '~/.vim/plugin/vim-colors-solarized'
 
 " Vim's built-in man page viewer (for easier reading of man entries)
-Plug '~/.vim/plugin/man.vim'
+Plug '~/.vim/plugin/man'
 
 call plug#end()
 " }}}
@@ -168,9 +168,12 @@ iabbrev  waht what
 iabbrev @@ wgantt@bowdoin.edu
 iabbrev Wg William Gantt
 iabbrev wg Will Gantt
-iabbrev cpt Copyright (c) 2016 William Gantt, all rights reserved
+iabbrev cpr Copyright (c) 2016 William Gantt, all rights reserved
 iabbrev sig WAHG
-
+iabbrev stg something
+iabbrev sby somebody
+iabbrev bc because
+iabbrev wrt with regard to
 " }}}
 
 " AUTOCOMMANDS {{{
