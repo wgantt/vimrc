@@ -19,6 +19,8 @@ call plug#end()
 
 " DISPLAY ----------------------------------------------- {{{
 
+" adjust command prompt height to minimize 'hit enter' notices
+set cmdheight=2
 " solarized color scheme
 syntax enable
 set background=dark
@@ -174,6 +176,7 @@ iabbrev stg something
 iabbrev sby somebody
 iabbrev bc because
 iabbrev wrt with regard to
+iabbrev mk # -*- MakeFile -*-
 " }}}
 
 " AUTOCOMMANDS {{{
